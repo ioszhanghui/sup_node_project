@@ -18,7 +18,7 @@ next();
 
 /*获取活动列表*/
 app.post('/discountList',function(req,res){
-	console.log(JSON.stringify(req.body));
+	console.log(req.body.cust_no+"用户编号");
 	console.log("收到请求");
 })
 app.listen(8081,function () {
