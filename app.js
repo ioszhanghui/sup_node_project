@@ -6,11 +6,14 @@ var bodyParser = require('body-parser');
 var multer = require('multer');
  var util =require('./util/util.js');
  var handler = require('./handler/handler');
+ var defaults = require('./config/default');
+ var querySql = require('./querySql/querySql');
+ 
 /*全局设置解析格式*/
 app.use(bodyParser.json());
 app.use(multer());
 
-var pool = mysql.createPool({"host":"39.105.115.133","user":"root","password":"123456","database":"mysql","port":"3306"})
+var pool = mysql.createPool(defaults.mysqlConfig)
 /*跨域问题*/
 //设置跨域访问
 app.all('*', function(req, res, next) {
@@ -38,25 +41,21 @@ app.post('/login',function(req,res){
 		return;
 	}
 	/*链接数据库*/
-	pool.getConnection(function (error,connection) {
-		if (error) {
-			res.send({"code":"300","message":"接口异常"});
-		}else{
-			connection.query("SELECT COUNT(*) amount FROM user_info_table",function (error,data) {
-				console.log(JSON.stringify(data)+"个数");
-				if(data[0].amount==0){
-					connection.query('insert into user_info_table(open_id) values('+result.open_id+')',function (error,data) {
-						if (!error) {
-							res.send({"code":"200","message":"登录成功"});
-						}else{
-							//数据插入异常
-							res.send({"code":"300","message":"接口异常"});
-						}
-					})
+	pool.query(querySql.loginSql,[result.open_id],function (error,data) {
+		if(data[0].amount==0){
+			pool.query(querySql.loginSaveSql,[result.open_id],function (error,data) {
+				if (!error) {
+					res.send({"code":"200","message":"登录成功"});
+				}else{
+					//数据插入异常
+					res.send({"code":"300","message":"接口异常"});
 				}
-			});
+			})
+			return;
 		}
-	})
+		/*用户已经*/
+		res.send({"code":"200","message":"登录成功"});
+	});
 })
 /*获取优惠券列表*/
 app.post('/getBonusList',function  (req,res) {
@@ -78,9 +77,7 @@ app.post('/getBonusList',function  (req,res) {
 			res.send({"code":"300","message":"接口异常"});
 		}else{
 			
-			var sqlStr ="SELECT user_discount_relation.open_id,user_discount_relation.discount_id,user_discount_relation.is_get,user_discount_relation.is_use,sup_discount_coupon.discount_amount,sup_discount_coupon.discount_title,sup_discount_coupon.discount_reduce_amount,sup_discount_coupon.discount_outtime,sup_discount_coupon.discount_create_time FROM user_discount_relation RIGHT JOIN sup_discount_coupon ON user_discount_relation.discount_id = sup_discount_coupon.id WHERE user_discount_relation.open_id="+result.open_id+" ORDER BY sup_discount_coupon.discount_create_time DESC";
-			console.log(sqlStr+"查询语句");
-			connection.query(sqlStr,function (error,data) {
+			connection.query(querySql.discount_listSql,[result.open_id],function (error,data) {
 				if (error) {
 					res.send({"code":"300","message":"接口异常"});
 				}else{
@@ -121,10 +118,8 @@ app.post('/getCoupons',function  (req,res) {
 	pool.getConnection(function  (error,connection) {
 		if (error) {
 			res.send({"code":"300","message":"接口异常"});
-		}else{
-			var sqlStr = "INSERT INTO user_discount_relation(open_id,discount_id,is_get,is_use,discount_code) VALUES("+param.open_id+","+param.discount_id+","+"1"+","+"0"+","+util.supCode()+")";
-			console.log(sqlStr+"插入的语句");
-			connection.query(sqlStr,function (error,data) {
+		}else{			
+			connection.query(querySql.getDiscountSql,[param.open_id,param.discount_id,"1","0",util.supCode()],function (error,data) {
 				if (error) {
 					res.send({"code":"300","message":"领取失败"});
 				}else{
@@ -155,9 +150,7 @@ app.post('/supDetail',function  (req,res) {
 		if (error) {
 			res.send({"code":"300","message":"接口异常"});
 		}else{
-			var sqlStr = 'SELECT u.id,u.is_get,u.is_use,u.discount_id,u.discount_code,r.discount_amount,r.discount_title,r.discount_reduce_amount,r.discount_outtime FROM user_discount_relation u INNER JOIN sup_discount_coupon r ON u.discount_id =r.id WHERE u.discount_id='+param.discount_id;
-			console.log(sqlStr+"查询语句");
-			connection.query(sqlStr,function  (error,data) {
+			connection.query(querySql.detailSql,[param.discount_id],function  (error,data) {
 				if (error) {
 					res.send({"code":"300","message":"查询失败"})
 				}else{
