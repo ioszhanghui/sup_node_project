@@ -10,11 +10,19 @@ function checkIsJson (result) {
 	}
 	return true;
 }
+/*判断字符串是不是数字*/
+function checkNumberValidate (val) {
+	var reg = /^[0-9]+.?[0-9]*/;
+	if (reg.test(val)) {
+		return true;
+	}
+	return false;
+}
 
 /*判断字符串是不是为空*/
 function  isNullString(str) {
-	
-	if(!(typeof str =="string")||str == undefined||!str){
+	console.log(typeof str+"参数值");
+	if(!(typeof str =="string")||str == undefined||!str||str =="undefined"||str=="null"||str=="<null>"){
 		return false;
 	}
 	str = str.replace(/\s+/g,"");
@@ -52,8 +60,7 @@ function isTimeOut (date) {
 function supCode(){
 	var str = "";
 	while (str.length!=12){
-		var number = Math.ceil(Math.random()*10);
-		str =str+number;
+		str =str+ Math.ceil(Math.random()*10);
 	}
 	return str;
 }
@@ -62,5 +69,6 @@ module.exports = {
 	isNullString:isNullString,
 	appendID:appendID,
 	isTimeOut:isTimeOut,
-	supCode:supCode
+	supCode:supCode,
+	checkNumberValidate:checkNumberValidate
 }

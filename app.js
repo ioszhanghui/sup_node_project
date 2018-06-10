@@ -1,5 +1,4 @@
 var express =require('express');
-var mysql = require('mysql');
 var querystring = require('querystring');
 var app = express();
 var bodyParser = require('body-parser');
@@ -9,30 +8,35 @@ var multer = require('multer');
  var defaults = require('./config/default');
  var querySql = require('./querySql/querySql');
  var sqldb = require('./querySql/db.js');
- var domains = require('domain');
- var logger = require('pomelo-logger').getLogger('pomelo');
- 
+ var log4js = require('log4js');
+ log4js.configure({
+ 	levels:{
+ 		'log_date' : 'INFO'
+ 	},
+ 	appenders:[{
+ 		type:'console',
+ 		category:'console'
+ 	},
+ 	{
+ 		type:'dateFile',//写入日志
+ 		filename:'./logs/',//日志文件
+ 		alwaysIncludePattern: true,
+ 		encoding:'utf-8',////default "utf-8"，文件的编码
+ 		category : 'log_date',
+ 		pattern: "yyyy-MM-dd.log"
+ 	}
+ 	],
+ 	replaceConsole:true
+ })
+ var logger = log4js.getLogger('log_date');
+ app.use(log4js.connectLogger(logger, {level:'INFO',format:':date:method :url'}));
+
+
 /*全局设置解析格式*/
 app.use(bodyParser.json());
 app.use(multer());
-/*全局异常处理*/
-app.use(function  (req,res,next) {
-	var d = domains.create();
-	  //监听domain的错误事件
-	  d.on('error', function (err) {
-	    logger.error(err);
-	    res.json({'code':"500", messag: '服务器异常'});
-	    d.dispose();
-	  });
-	  
-	  d.add(req);
-	  d.add(res);
-	  d.run(next);
-})
 
-var pool = mysql.createPool(defaults.mysqlConfig)
 /*跨域问题*/
-//设置跨域访问
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -51,26 +55,31 @@ app.post('/login',function(req,res){
 		res.send({"code":"300","message":"参数异常"});
 		return;
 	}
-	if(!util.isNullString(result.open_id)){
+	if(!util.isNullString(result.open_id)||!util.checkNumberValidate(result.open_id)){
 		res.send({"code":"300","message":"参数异常 open_id"});
 		return;
 	}
 	/*链接数据库*/
-	sqldb.querydb(querySql.loginSql,[result.open_id],function (result) {
-			if(result[0].amount==0){
-				sqldb.querydb(querySql.loginSaveSql,[result.open_id],function  (result) {
-					if (!error) {
-						res.send({"code":"200","message":"登录成功"});
-						
-					}else{
-						//数据插入异常
-						res.send({"code":"300","message":"接口异常"});
-					}
+
+	sqldb.querydb(querySql.loginSql,[result.open_id]).then(function (data) {
+		/*成功的回调*/
+		if(data[0].amount==0){
+				sqldb.querydb(querySql.loginSaveSql,[result.open_id]).then(function (data) {
+		
+					res.send({"code":"200","message":"登录成功"});
+					
+				}).catch(function  (error) {
+					/*失败的回调*/
+					res.send({"code":"500","message":"服务器异常"});
 				})
 				return;
 		}
-		/*用户已经*/
 		res.send({"code":"200","message":"登录成功"});
+		
+	}).catch(function(error){
+		/*失败的回调*/
+		res.send({"code":"500","message":"服务器异常"});
+		logger.error("接口"+req.url+"参数"+JSON.stringify(req.body)+error.stack);
 	})
 })
 /*获取优惠券列表*/
@@ -82,48 +91,33 @@ app.post('/getBonusList',function  (req,res) {
 		res.send({"code":"300","message":"参数异常"});
 		return;
 	}
-	if(!util.isNullString(result.open_id)){
+	if(!util.isNullString(result.open_id)||!util.checkNumberValidate(result.open_id)){
 		res.send({"code":"300","message":"参数异常 open_id"});
 		return;
 	}
 	
-	sqldb.querydb(querySql.discount_listSql,[result.open_id],function (result) {
-					var exitResult = result;
-					var sqlLeft =util.appendID(exitResult);
-					var unHaveSql = "SELECT DISTINCT u.open_id,rel.is_get,rel.is_use,dis.discount_amount,dis.discount_title,dis.discount_reduce_amount,dis.discount_outtime,dis.id AS discount_id FROM user_info_table u ,user_discount_relation rel,sup_discount_coupon dis WHERE dis.id NOT in ("+sqlLeft+")";
-					sqldb.querydb(unHaveSql,function (result) {
-						exitResult =exitResult.concat(result);
-						exitResult = handler.dealBonusList(exitResult);
-						res.send({"code":"200","message":"获取成功","data":exitResult});
-					})
-			});
 	/*链接数据库*/
-//	pool.getConnection(function (error,connection) {
-//		if (error) {
-//			res.send({"code":"300","message":"接口异常"});
-//		}else{
-//			
-//			connection.query(querySql.discount_listSql,[result.open_id],function (error,data) {
-//				if (error) {
-//					res.send({"code":"300","message":"接口异常"});
-//					throw error;
-//				}else{
-//					var exitResult = data;
-//					var sqlLeft =util.appendID(exitResult);
-//					var unHaveSql = "SELECT DISTINCT u.open_id,rel.is_get,rel.is_use,dis.discount_amount,dis.discount_title,dis.discount_reduce_amount,dis.discount_outtime,dis.id AS discount_id FROM user_info_table u ,user_discount_relation rel,sup_discount_coupon dis WHERE dis.id NOT in ("+sqlLeft+")";
-//					connection.query(unHaveSql,function (error,data) {
-//						if (error) {
-//							res.send({"code":"300","message":"接口异常"});
-//						}else{
-//							exitResult =exitResult.concat(data);
-//							exitResult = handler.dealBonusList(exitResult);
-//							res.send({"code":"200","message":"获取成功","data":exitResult});
-//						}
-//					});
-//				}
-//			});
-//		}
-//	})
+	sqldb.querydb(querySql.discount_listSql,[result.open_id]).then(function  (data) {
+		var exitResult = data;
+		var sqlLeft = util.appendID(exitResult);
+		var unHaveSql = "SELECT DISTINCT dis.discount_amount,dis.discount_title,dis.discount_reduce_amount,dis.discount_outtime,dis.id AS discount_id FROM user_info_table u ,user_discount_relation rel,sup_discount_coupon dis WHERE dis.id NOT in ("+sqlLeft+")";
+		
+		sqldb.querydb(unHaveSql).then(function (data) {
+			exitResult = handler.dealBonusList(exitResult);
+			data = handler.dealUnHaveBonusList(data,result.open_id);
+			exitResult =exitResult.concat(data);
+			res.send({"code":"200","message":"获取成功","data":exitResult});
+	
+		}).catch(function  (error) {
+			res.send({"code":"300","message":"查询失败"});
+			logger.error("接口"+req.url+"参数"+JSON.stringify(req.body)+error.stack);
+		})
+		
+	}).catch(function  (error) {
+			/*失败的回调*/
+		res.send({"code":"300","message":"查询失败"});
+		logger.error("接口"+req.url+"参数"+JSON.stringify(req.body)+error.stack);
+	});
 })
 /*领取优惠券*/
 app.post('/getCoupons',function  (req,res) {
@@ -142,31 +136,22 @@ app.post('/getCoupons',function  (req,res) {
 		return;
 	}
 	/*链接数据库*/
-	pool.getConnection(function  (error,connection) {
-		if (error) {
-			res.send({"code":"300","message":"接口异常"});
-			throw error;
-		}else{			
-			connection.query(querySql.getDiscountSql,[param.open_id,param.discount_id,"1","0",util.supCode()],function (error,data) {
-				if (error) {
-					res.send({"code":"300","message":"领取失败"});
-					throw error;
-				}else{
-					res.send({"code":"200","message":"领取成功"});
-				}
-			})
-		}
+	sqldb.querydb(querySql.getDiscountSql,[param.open_id,param.discount_id,"1","0",util.supCode()]).then(function  (result) {
+		res.send({"code":"200","message":"领取成功"});
+		
+	}).catch(function  (error) {
+		res.send({"code":"300","message":"领取失败"});
+		logger.error("接口"+req.url+"参数"+JSON.stringify(req.body)+error.stack);
 	})
 })
 
 /*领取优惠券详情*/
 app.post('/supDetail',function  (req,res) {
-	
 	if (!util.checkIsJson(req.body)) {
 		res.send({"code":"300","message":"参数异常"});
 		return;
 	}
-	var param = req.body;
+	var param = req.body; 
 	if (!util.isNullString(param.open_id)) {
 		res.send({"code":"300","message":"参数异常 open_id"});
 		return;
@@ -175,22 +160,19 @@ app.post('/supDetail',function  (req,res) {
 		res.send({"code":"300","message":"参数异常 discount_id"});
 		return;
 	}
-	pool.getConnection(function  (error,connection) {
-		if (error) {
-			res.send({"code":"300","message":"接口异常"});
-			throw error;
-		}else{
-			connection.query(querySql.detailSql,[param.discount_id],function  (error,data) {
-				if (error) {
-					res.send({"code":"300","message":"查询失败"})
-				}else{
-					res.send({"code":"200","message":"查询成功",data:data[0]})
-				}
-			})
-		}
+	
+	sqldb.querydb(querySql.detailSql,[param.discount_id]).then(function  (data) {
+		res.send({"code":"200","message":"查询成功",data:data[0]})
+	}).catch(function (error) {
+		res.send({"code":"300","message":"查询失败"})
+		logger.error("接口"+req.url+"参数"+JSON.stringify(req.body)+error.stack);
 	})
 });
 app.listen(8081,function () {
 console.log("服务器启动成功");	
 })
 
+process.on("uncaughtException",function (error){
+	console.log(error+"异常信息");
+	logger.info(error.stack);
+})

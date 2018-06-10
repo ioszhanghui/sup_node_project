@@ -1,0 +1,197 @@
+[2018-06-10 07:47:45.819] [INFO] log_date - Sat, 09 Jun 2018 23:47:45 GMTPOST /getCoupons
+[2018-06-10 07:48:05.761] [INFO] log_date - Sat, 09 Jun 2018 23:48:05 GMTPOST /getBonusList
+[2018-06-10 07:48:05.761] [ERROR] log_date - 接口/getBonusList参数[object Object]Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT dis.discount_amount,dis.discount_title,dis.discount_reduce_amount,dis.d' at line 1
+    at Query.Sequence._packetToError (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:153:18)
+    at Socket.Readable.push (_stream_readable.js:111:10)
+    --------------------
+    at Protocol._enqueue (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/querySql/db.js:16:16
+    at Ping.onOperationComplete [as _callback] (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.Sequence.end (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Ping.Sequence.OkPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+[2018-06-10 07:50:14.398] [INFO] log_date - Sat, 09 Jun 2018 23:50:14 GMTPOST /getBonusList
+[2018-06-10 07:50:14.399] [ERROR] log_date - 接口/getBonusList参数{"open_id":"1","discount_id":"16"}Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT dis.discount_amount,dis.discount_title,dis.discount_reduce_amount,dis.d' at line 1
+    at Query.Sequence._packetToError (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:153:18)
+    at Socket.Readable.push (_stream_readable.js:111:10)
+    --------------------
+    at Protocol._enqueue (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/querySql/db.js:16:16
+    at Ping.onOperationComplete [as _callback] (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.Sequence.end (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Ping.Sequence.OkPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+[2018-06-10 07:52:15.895] [INFO] log_date - Sat, 09 Jun 2018 23:52:15 GMTPOST /getBonusList
+[2018-06-10 07:52:17.054] [INFO] log_date - Sat, 09 Jun 2018 23:52:17 GMTPOST /getBonusList
+[2018-06-10 07:52:34.594] [INFO] log_date - Sat, 09 Jun 2018 23:52:34 GMTPOST /getBonusList
+[2018-06-10 07:52:35.525] [INFO] log_date - Sat, 09 Jun 2018 23:52:35 GMTPOST /getBonusList
+[2018-06-10 07:52:36.373] [INFO] log_date - Sat, 09 Jun 2018 23:52:36 GMTPOST /getBonusList
+[2018-06-10 07:52:37.147] [INFO] log_date - Sat, 09 Jun 2018 23:52:37 GMTPOST /getBonusList
+[2018-06-10 07:52:37.968] [INFO] log_date - Sat, 09 Jun 2018 23:52:37 GMTPOST /getBonusList
+[2018-06-10 07:52:38.703] [INFO] log_date - Sat, 09 Jun 2018 23:52:38 GMTPOST /getBonusList
+[2018-06-10 07:52:39.509] [INFO] log_date - Sat, 09 Jun 2018 23:52:39 GMTPOST /getBonusList
+[2018-06-10 07:52:40.294] [INFO] log_date - Sat, 09 Jun 2018 23:52:40 GMTPOST /getBonusList
+[2018-06-10 07:52:41.060] [INFO] log_date - Sat, 09 Jun 2018 23:52:41 GMTPOST /getBonusList
+[2018-06-10 07:52:41.800] [INFO] log_date - Sat, 09 Jun 2018 23:52:41 GMTPOST /getBonusList
+[2018-06-10 07:52:42.537] [INFO] log_date - Sat, 09 Jun 2018 23:52:42 GMTPOST /getBonusList
+[2018-06-10 07:52:43.327] [INFO] log_date - Sat, 09 Jun 2018 23:52:43 GMTPOST /getBonusList
+[2018-06-10 07:52:44.113] [INFO] log_date - Sat, 09 Jun 2018 23:52:44 GMTPOST /getBonusList
+[2018-06-10 07:52:45.064] [INFO] log_date - Sat, 09 Jun 2018 23:52:45 GMTPOST /getBonusList
+[2018-06-10 07:52:45.918] [INFO] log_date - Sat, 09 Jun 2018 23:52:45 GMTPOST /getBonusList
+[2018-06-10 07:52:46.804] [INFO] log_date - Sat, 09 Jun 2018 23:52:46 GMTPOST /getBonusList
+[2018-06-10 07:52:47.633] [INFO] log_date - Sat, 09 Jun 2018 23:52:47 GMTPOST /getBonusList
+[2018-06-10 07:52:48.422] [INFO] log_date - Sat, 09 Jun 2018 23:52:48 GMTPOST /getBonusList
+[2018-06-10 07:52:49.198] [INFO] log_date - Sat, 09 Jun 2018 23:52:49 GMTPOST /getBonusList
+[2018-06-10 07:52:50.016] [INFO] log_date - Sat, 09 Jun 2018 23:52:50 GMTPOST /getBonusList
+[2018-06-10 07:52:50.707] [INFO] log_date - Sat, 09 Jun 2018 23:52:50 GMTPOST /getBonusList
+[2018-06-10 07:52:51.446] [INFO] log_date - Sat, 09 Jun 2018 23:52:51 GMTPOST /getBonusList
+[2018-06-10 07:52:52.284] [INFO] log_date - Sat, 09 Jun 2018 23:52:52 GMTPOST /getBonusList
+[2018-06-10 07:52:53.041] [INFO] log_date - Sat, 09 Jun 2018 23:52:53 GMTPOST /getBonusList
+[2018-06-10 07:52:53.753] [INFO] log_date - Sat, 09 Jun 2018 23:52:53 GMTPOST /getBonusList
+[2018-06-10 07:52:54.500] [INFO] log_date - Sat, 09 Jun 2018 23:52:54 GMTPOST /getBonusList
+[2018-06-10 07:52:55.505] [INFO] log_date - Sat, 09 Jun 2018 23:52:55 GMTPOST /getBonusList
+[2018-06-10 07:52:56.266] [INFO] log_date - Sat, 09 Jun 2018 23:52:56 GMTPOST /getBonusList
+[2018-06-10 07:52:57.022] [INFO] log_date - Sat, 09 Jun 2018 23:52:57 GMTPOST /getBonusList
+[2018-06-10 07:52:57.798] [INFO] log_date - Sat, 09 Jun 2018 23:52:57 GMTPOST /getBonusList
+[2018-06-10 07:52:58.555] [INFO] log_date - Sat, 09 Jun 2018 23:52:58 GMTPOST /getBonusList
+[2018-06-10 07:52:59.338] [INFO] log_date - Sat, 09 Jun 2018 23:52:59 GMTPOST /getBonusList
+[2018-06-10 07:53:00.532] [INFO] log_date - Sat, 09 Jun 2018 23:53:00 GMTPOST /getBonusList
+[2018-06-10 07:53:01.302] [INFO] log_date - Sat, 09 Jun 2018 23:53:01 GMTPOST /getBonusList
+[2018-06-10 07:53:02.125] [INFO] log_date - Sat, 09 Jun 2018 23:53:02 GMTPOST /getBonusList
+[2018-06-10 07:53:02.830] [INFO] log_date - Sat, 09 Jun 2018 23:53:02 GMTPOST /getBonusList
+[2018-06-10 07:53:03.644] [INFO] log_date - Sat, 09 Jun 2018 23:53:03 GMTPOST /getBonusList
+[2018-06-10 07:53:04.476] [INFO] log_date - Sat, 09 Jun 2018 23:53:04 GMTPOST /getBonusList
+[2018-06-10 07:53:05.201] [INFO] log_date - Sat, 09 Jun 2018 23:53:05 GMTPOST /getBonusList
+[2018-06-10 07:53:05.938] [INFO] log_date - Sat, 09 Jun 2018 23:53:05 GMTPOST /getBonusList
+[2018-06-10 07:53:06.749] [INFO] log_date - Sat, 09 Jun 2018 23:53:06 GMTPOST /getBonusList
+[2018-06-10 07:53:07.571] [INFO] log_date - Sat, 09 Jun 2018 23:53:07 GMTPOST /getBonusList
+[2018-06-10 07:53:08.361] [INFO] log_date - Sat, 09 Jun 2018 23:53:08 GMTPOST /getBonusList
+[2018-06-10 07:53:09.187] [INFO] log_date - Sat, 09 Jun 2018 23:53:09 GMTPOST /getBonusList
+[2018-06-10 07:53:09.956] [INFO] log_date - Sat, 09 Jun 2018 23:53:09 GMTPOST /getBonusList
+[2018-06-10 07:53:10.836] [INFO] log_date - Sat, 09 Jun 2018 23:53:10 GMTPOST /getBonusList
+[2018-06-10 07:53:11.610] [INFO] log_date - Sat, 09 Jun 2018 23:53:11 GMTPOST /getBonusList
+[2018-06-10 07:53:12.365] [INFO] log_date - Sat, 09 Jun 2018 23:53:12 GMTPOST /getBonusList
+[2018-06-10 07:53:13.104] [INFO] log_date - Sat, 09 Jun 2018 23:53:13 GMTPOST /getBonusList
+[2018-06-10 07:53:13.849] [INFO] log_date - Sat, 09 Jun 2018 23:53:13 GMTPOST /getBonusList
+[2018-06-10 07:53:14.573] [INFO] log_date - Sat, 09 Jun 2018 23:53:14 GMTPOST /getBonusList
+[2018-06-10 07:53:15.240] [INFO] log_date - Sat, 09 Jun 2018 23:53:15 GMTPOST /getBonusList
+[2018-06-10 07:53:15.931] [INFO] log_date - Sat, 09 Jun 2018 23:53:15 GMTPOST /getBonusList
+[2018-06-10 07:53:16.709] [INFO] log_date - Sat, 09 Jun 2018 23:53:16 GMTPOST /getBonusList
+[2018-06-10 07:53:17.473] [INFO] log_date - Sat, 09 Jun 2018 23:53:17 GMTPOST /getBonusList
+[2018-06-10 07:53:18.241] [INFO] log_date - Sat, 09 Jun 2018 23:53:18 GMTPOST /getBonusList
+[2018-06-10 07:53:18.892] [INFO] log_date - Sat, 09 Jun 2018 23:53:18 GMTPOST /getBonusList
+[2018-06-10 07:53:19.633] [INFO] log_date - Sat, 09 Jun 2018 23:53:19 GMTPOST /getBonusList
+[2018-06-10 07:53:20.381] [INFO] log_date - Sat, 09 Jun 2018 23:53:20 GMTPOST /getBonusList
+[2018-06-10 07:53:21.185] [INFO] log_date - Sat, 09 Jun 2018 23:53:21 GMTPOST /getBonusList
+[2018-06-10 07:53:21.825] [INFO] log_date - Sat, 09 Jun 2018 23:53:21 GMTPOST /getBonusList
+[2018-06-10 07:53:22.613] [INFO] log_date - Sat, 09 Jun 2018 23:53:22 GMTPOST /getBonusList
+[2018-06-10 07:53:23.402] [INFO] log_date - Sat, 09 Jun 2018 23:53:23 GMTPOST /getBonusList
+[2018-06-10 07:53:24.114] [INFO] log_date - Sat, 09 Jun 2018 23:53:24 GMTPOST /getBonusList
+[2018-06-10 07:53:24.878] [INFO] log_date - Sat, 09 Jun 2018 23:53:24 GMTPOST /getBonusList
+[2018-06-10 07:53:25.552] [INFO] log_date - Sat, 09 Jun 2018 23:53:25 GMTPOST /getBonusList
+[2018-06-10 07:53:26.230] [INFO] log_date - Sat, 09 Jun 2018 23:53:26 GMTPOST /getBonusList
+[2018-06-10 07:53:27.024] [INFO] log_date - Sat, 09 Jun 2018 23:53:27 GMTPOST /getBonusList
+[2018-06-10 07:53:27.803] [INFO] log_date - Sat, 09 Jun 2018 23:53:27 GMTPOST /getBonusList
+[2018-06-10 07:53:28.576] [INFO] log_date - Sat, 09 Jun 2018 23:53:28 GMTPOST /getBonusList
+[2018-06-10 07:53:29.342] [INFO] log_date - Sat, 09 Jun 2018 23:53:29 GMTPOST /getBonusList
+[2018-06-10 07:53:30.085] [INFO] log_date - Sat, 09 Jun 2018 23:53:30 GMTPOST /getBonusList
+[2018-06-10 07:53:30.851] [INFO] log_date - Sat, 09 Jun 2018 23:53:30 GMTPOST /getBonusList
+[2018-06-10 07:53:32.329] [INFO] log_date - Sat, 09 Jun 2018 23:53:32 GMTPOST /getBonusList
+[2018-06-10 07:53:33.141] [INFO] log_date - Sat, 09 Jun 2018 23:53:33 GMTPOST /getBonusList
+[2018-06-10 07:53:34.035] [INFO] log_date - Sat, 09 Jun 2018 23:53:34 GMTPOST /getBonusList
+[2018-06-10 07:53:34.890] [INFO] log_date - Sat, 09 Jun 2018 23:53:34 GMTPOST /getBonusList
+[2018-06-10 07:53:35.614] [INFO] log_date - Sat, 09 Jun 2018 23:53:35 GMTPOST /getBonusList
+[2018-06-10 07:53:36.224] [INFO] log_date - Sat, 09 Jun 2018 23:53:36 GMTPOST /getBonusList
+[2018-06-10 07:53:36.894] [INFO] log_date - Sat, 09 Jun 2018 23:53:36 GMTPOST /getBonusList
+[2018-06-10 07:53:37.496] [INFO] log_date - Sat, 09 Jun 2018 23:53:37 GMTPOST /getBonusList
+[2018-06-10 07:53:38.121] [INFO] log_date - Sat, 09 Jun 2018 23:53:38 GMTPOST /getBonusList
+[2018-06-10 07:55:09.850] [INFO] log_date - Sat, 09 Jun 2018 23:55:09 GMTPOST /getBonusList
+[2018-06-10 07:55:10.370] [INFO] log_date - Sat, 09 Jun 2018 23:55:10 GMTPOST /getBonusList
+[2018-06-10 07:55:11.018] [INFO] log_date - Sat, 09 Jun 2018 23:55:11 GMTPOST /getBonusList
+[2018-06-10 07:55:11.608] [INFO] log_date - Sat, 09 Jun 2018 23:55:11 GMTPOST /getBonusList
+[2018-06-10 07:55:12.499] [INFO] log_date - Sat, 09 Jun 2018 23:55:12 GMTPOST /getBonusList
+[2018-06-10 07:55:13.341] [INFO] log_date - Sat, 09 Jun 2018 23:55:13 GMTPOST /getBonusList
+[2018-06-10 07:55:14.163] [INFO] log_date - Sat, 09 Jun 2018 23:55:14 GMTPOST /getBonusList
+[2018-06-10 07:55:14.792] [INFO] log_date - Sat, 09 Jun 2018 23:55:14 GMTPOST /getBonusList
+[2018-06-10 07:55:15.625] [INFO] log_date - Sat, 09 Jun 2018 23:55:15 GMTPOST /getBonusList
+[2018-06-10 07:55:16.436] [INFO] log_date - Sat, 09 Jun 2018 23:55:16 GMTPOST /getBonusList
+[2018-06-10 07:55:17.190] [INFO] log_date - Sat, 09 Jun 2018 23:55:17 GMTPOST /getBonusList
+[2018-06-10 07:55:17.980] [INFO] log_date - Sat, 09 Jun 2018 23:55:17 GMTPOST /getBonusList
+[2018-06-10 07:55:18.764] [INFO] log_date - Sat, 09 Jun 2018 23:55:18 GMTPOST /getBonusList
+[2018-06-10 07:55:19.514] [INFO] log_date - Sat, 09 Jun 2018 23:55:19 GMTPOST /getBonusList
+[2018-06-10 07:55:20.511] [INFO] log_date - Sat, 09 Jun 2018 23:55:20 GMTPOST /getBonusList
+[2018-06-10 07:55:21.331] [INFO] log_date - Sat, 09 Jun 2018 23:55:21 GMTPOST /getBonusList
+[2018-06-10 07:55:22.122] [INFO] log_date - Sat, 09 Jun 2018 23:55:22 GMTPOST /getBonusList
+[2018-06-10 07:55:22.922] [INFO] log_date - Sat, 09 Jun 2018 23:55:22 GMTPOST /getBonusList
+[2018-06-10 07:55:23.626] [INFO] log_date - Sat, 09 Jun 2018 23:55:23 GMTPOST /getBonusList
+[2018-06-10 07:55:24.433] [INFO] log_date - Sat, 09 Jun 2018 23:55:24 GMTPOST /getBonusList
+[2018-06-10 07:55:25.174] [INFO] log_date - Sat, 09 Jun 2018 23:55:25 GMTPOST /getBonusList
+[2018-06-10 07:55:25.940] [INFO] log_date - Sat, 09 Jun 2018 23:55:25 GMTPOST /getBonusList
+[2018-06-10 07:55:26.712] [INFO] log_date - Sat, 09 Jun 2018 23:55:26 GMTPOST /getBonusList
+[2018-06-10 07:55:27.386] [INFO] log_date - Sat, 09 Jun 2018 23:55:27 GMTPOST /getBonusList
+[2018-06-10 07:55:28.045] [INFO] log_date - Sat, 09 Jun 2018 23:55:28 GMTPOST /getBonusList
+[2018-06-10 07:55:28.639] [INFO] log_date - Sat, 09 Jun 2018 23:55:28 GMTPOST /getBonusList
+[2018-06-10 07:55:29.380] [INFO] log_date - Sat, 09 Jun 2018 23:55:29 GMTPOST /getBonusList
+[2018-06-10 07:55:29.945] [INFO] log_date - Sat, 09 Jun 2018 23:55:29 GMTPOST /getBonusList
+[2018-06-10 07:55:30.706] [INFO] log_date - Sat, 09 Jun 2018 23:55:30 GMTPOST /getBonusList
+[2018-06-10 07:55:31.442] [INFO] log_date - Sat, 09 Jun 2018 23:55:31 GMTPOST /getBonusList
+[2018-06-10 07:55:32.154] [INFO] log_date - Sat, 09 Jun 2018 23:55:32 GMTPOST /getBonusList
+[2018-06-10 07:55:32.928] [INFO] log_date - Sat, 09 Jun 2018 23:55:32 GMTPOST /getBonusList
+[2018-06-10 07:55:33.809] [INFO] log_date - Sat, 09 Jun 2018 23:55:33 GMTPOST /getBonusList
+[2018-06-10 07:55:34.622] [INFO] log_date - Sat, 09 Jun 2018 23:55:34 GMTPOST /getBonusList
+[2018-06-10 07:55:35.300] [INFO] log_date - Sat, 09 Jun 2018 23:55:35 GMTPOST /getBonusList
+[2018-06-10 07:55:36.062] [INFO] log_date - Sat, 09 Jun 2018 23:55:36 GMTPOST /getBonusList
+[2018-06-10 07:55:36.770] [INFO] log_date - Sat, 09 Jun 2018 23:55:36 GMTPOST /getBonusList
+[2018-06-10 07:55:37.359] [INFO] log_date - Sat, 09 Jun 2018 23:55:37 GMTPOST /getBonusList
+[2018-06-10 08:04:52.311] [INFO] log_date - Sun, 10 Jun 2018 00:04:52 GMTPOST /getBonusList
+[2018-06-10 08:04:53.916] [INFO] log_date - Sun, 10 Jun 2018 00:04:53 GMTPOST /getBonusList
+[2018-06-10 08:04:54.823] [INFO] log_date - Sun, 10 Jun 2018 00:04:54 GMTPOST /getBonusList
+[2018-06-10 08:04:55.568] [INFO] log_date - Sun, 10 Jun 2018 00:04:55 GMTPOST /getBonusList
+[2018-06-10 08:04:56.459] [INFO] log_date - Sun, 10 Jun 2018 00:04:56 GMTPOST /getBonusList
+[2018-06-10 08:04:57.300] [INFO] log_date - Sun, 10 Jun 2018 00:04:57 GMTPOST /getBonusList
+[2018-06-10 08:04:58.052] [INFO] log_date - Sun, 10 Jun 2018 00:04:58 GMTPOST /getBonusList
+[2018-06-10 08:04:58.895] [INFO] log_date - Sun, 10 Jun 2018 00:04:58 GMTPOST /getBonusList
+[2018-06-10 08:04:59.682] [INFO] log_date - Sun, 10 Jun 2018 00:04:59 GMTPOST /getBonusList
+[2018-06-10 08:05:00.420] [INFO] log_date - Sun, 10 Jun 2018 00:05:00 GMTPOST /getBonusList
+[2018-06-10 08:05:01.150] [INFO] log_date - Sun, 10 Jun 2018 00:05:01 GMTPOST /getBonusList
+[2018-06-10 08:05:01.847] [INFO] log_date - Sun, 10 Jun 2018 00:05:01 GMTPOST /getBonusList
+[2018-06-10 08:05:02.590] [INFO] log_date - Sun, 10 Jun 2018 00:05:02 GMTPOST /getBonusList
+[2018-06-10 08:05:03.428] [INFO] log_date - Sun, 10 Jun 2018 00:05:03 GMTPOST /getBonusList
+[2018-06-10 08:05:04.145] [INFO] log_date - Sun, 10 Jun 2018 00:05:04 GMTPOST /getBonusList
+[2018-06-10 08:05:04.901] [INFO] log_date - Sun, 10 Jun 2018 00:05:04 GMTPOST /getBonusList
+[2018-06-10 08:05:05.527] [INFO] log_date - Sun, 10 Jun 2018 00:05:05 GMTPOST /getBonusList
+[2018-06-10 08:05:06.208] [INFO] log_date - Sun, 10 Jun 2018 00:05:06 GMTPOST /getBonusList
+[2018-06-10 08:05:06.916] [INFO] log_date - Sun, 10 Jun 2018 00:05:06 GMTPOST /getBonusList
+[2018-06-10 08:05:07.674] [INFO] log_date - Sun, 10 Jun 2018 00:05:07 GMTPOST /getBonusList
+[2018-06-10 08:05:08.388] [INFO] log_date - Sun, 10 Jun 2018 00:05:08 GMTPOST /getBonusList
+[2018-06-10 08:05:09.213] [INFO] log_date - Sun, 10 Jun 2018 00:05:09 GMTPOST /getBonusList
+[2018-06-10 08:05:10.041] [INFO] log_date - Sun, 10 Jun 2018 00:05:10 GMTPOST /getBonusList
+[2018-06-10 08:05:10.840] [INFO] log_date - Sun, 10 Jun 2018 00:05:10 GMTPOST /getBonusList
+[2018-06-10 08:05:11.953] [INFO] log_date - Sun, 10 Jun 2018 00:05:11 GMTPOST /getBonusList
+[2018-06-10 08:05:12.500] [INFO] log_date - Sun, 10 Jun 2018 00:05:12 GMTPOST /getBonusList
+[2018-06-10 08:05:13.257] [INFO] log_date - Sun, 10 Jun 2018 00:05:13 GMTPOST /getBonusList
+[2018-06-10 08:05:14.078] [INFO] log_date - Sun, 10 Jun 2018 00:05:14 GMTPOST /getBonusList
