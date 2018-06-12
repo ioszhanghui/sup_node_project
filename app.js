@@ -34,7 +34,6 @@ var multer = require('multer');
 
 /*全局设置解析格式*/
 app.use(bodyParser.json());
-app.use(bodyParser.text({ type: 'text/*' }));
 app.use(multer());
 
 /*跨域问题*/
