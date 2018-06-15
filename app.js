@@ -100,8 +100,13 @@ app.post('/getBonusList',function  (req,res) {
 	sqldb.querydb(querySql.discount_listSql,[result.open_id]).then(function  (data) {
 		var exitResult = data;
 		var sqlLeft = util.appendID(exitResult);
+		console.log(sqlLeft+"查询的ID");
+		
 		var unHaveSql = "SELECT DISTINCT dis.discount_amount,dis.discount_title,dis.discount_reduce_amount,dis.discount_outtime,dis.id AS discount_id FROM user_info_table u ,user_discount_relation rel,sup_discount_coupon dis WHERE dis.id NOT in ("+sqlLeft+")";
 		
+		if(exitResult.length==0){
+			unHaveSql = "SELECT DISTINCT dis.discount_amount,dis.discount_title,dis.discount_reduce_amount,dis.discount_outtime,dis.id AS discount_id FROM user_info_table u ,user_discount_relation rel,sup_discount_coupon dis";
+		}
 		sqldb.querydb(unHaveSql).then(function (data) {
 			exitResult = handler.dealBonusList(exitResult);
 			data = handler.dealUnHaveBonusList(data,result.open_id);
@@ -122,11 +127,14 @@ app.post('/getBonusList',function  (req,res) {
 /*领取优惠券*/
 app.post('/getCoupons',function  (req,res) {
 	
+	console.log("接收到请求");
 	if (!util.checkIsJson(req.body)) {
 		res.send({"code":"300","message":"参数异常"});
 		return;
 	}
+	
 	var param = req.body;
+	console.log(JSON.stringify(param)+"参数");
 	if (!util.isNullString(param.open_id)) {
 		res.send({"code":"300","message":"参数异常 open_id"});
 		return;
