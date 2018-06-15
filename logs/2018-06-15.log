@@ -13,3 +13,48 @@
 [2018-06-15 21:01:09.262] [INFO] log_date - Fri, 15 Jun 2018 13:01:09 GMTPOST /getCoupons
 [2018-06-15 21:01:10.101] [INFO] log_date - Fri, 15 Jun 2018 13:01:10 GMTPOST /getCoupons
 [2018-06-15 21:01:31.440] [INFO] log_date - Fri, 15 Jun 2018 13:01:31 GMTPOST /getCoupons
+[2018-06-15 21:51:35.891] [INFO] log_date - Error: listen EADDRINUSE :::8081
+    at Object.exports._errnoException (util.js:873:11)
+    at exports._exceptionWithHostPort (util.js:896:20)
+    at Server._listen2 (net.js:1250:14)
+    at listen (net.js:1286:10)
+    at Server.listen (net.js:1382:5)
+    at EventEmitter.listen (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/app.js:179:5)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+[2018-06-15 21:58:16.273] [INFO] log_date - Error: listen EADDRINUSE :::8081
+    at Object.exports._errnoException (util.js:873:11)
+    at exports._exceptionWithHostPort (util.js:896:20)
+    at Server._listen2 (net.js:1250:14)
+    at listen (net.js:1286:10)
+    at Server.listen (net.js:1382:5)
+    at EventEmitter.listen (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/app.js:179:5)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+[2018-06-15 21:58:32.051] [INFO] log_date - Error: listen EADDRINUSE :::8081
+    at Object.exports._errnoException (util.js:873:11)
+    at exports._exceptionWithHostPort (util.js:896:20)
+    at Server._listen2 (net.js:1250:14)
+    at listen (net.js:1286:10)
+    at Server.listen (net.js:1382:5)
+    at EventEmitter.listen (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/app.js:179:5)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+[2018-06-15 21:58:50.544] [INFO] log_date - Error: listen EADDRINUSE :::8081
+    at Object.exports._errnoException (util.js:873:11)
+    at exports._exceptionWithHostPort (util.js:896:20)
+    at Server._listen2 (net.js:1250:14)
+    at listen (net.js:1286:10)
+    at Server.listen (net.js:1382:5)
+    at EventEmitter.listen (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/app.js:179:5)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+[2018-06-15 22:08:34.333] [INFO] log_date - Fri, 15 Jun 2018 14:08:34 GMTPOST /getBonusList
