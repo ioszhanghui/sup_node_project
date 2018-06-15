@@ -105,7 +105,7 @@ app.post('/getBonusList',function  (req,res) {
 		var unHaveSql = "SELECT DISTINCT dis.discount_amount,dis.discount_title,dis.discount_reduce_amount,dis.discount_outtime,dis.id AS discount_id FROM user_info_table u ,user_discount_relation rel,sup_discount_coupon dis WHERE dis.id NOT in ("+sqlLeft+")";
 		
 		if(exitResult.length==0){
-			unHaveSql = "SELECT DISTINCT dis.discount_amount,dis.discount_title,dis.discount_reduce_amount,dis.discount_outtime,dis.id AS discount_id FROM user_info_table u ,user_discount_relation rel,sup_discount_coupon dis";
+			unHaveSql = "SELECT dis.id AS discount_id ,dis.discount_amount ,dis.discount_title,dis.discount_reduce_amount,dis.discount_outtime from sup_discount_coupon dis ORDER BY discount_outtime DESC";
 		}
 		sqldb.querydb(unHaveSql).then(function (data) {
 			exitResult = handler.dealBonusList(exitResult);
