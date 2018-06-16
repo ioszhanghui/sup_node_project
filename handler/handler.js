@@ -1,13 +1,16 @@
 var util = require('../util/util');
 
-function dealBonusList(list){
+function dealBonusList(list,type){
 	
 	for (var i = 0; i < list.length; i++) {
 		var obj =list[i];
 		obj.isTimeOut = util.isTimeOut(obj.discount_outtime);
 		obj.discount_code =util.spaceCode(obj.discount_code);
-		obj.discount_outtime = util.dateFormatter(obj.discount_outtime,"yyyy.MM.dd");
-		obj.discount_create_time = util.dateFormatter(obj.discount_create_time,"yyyy.MM.dd");
+		
+		if (type =='is_get') {
+			obj.discount_outtime = util.dateFormatter(obj.discount_outtime,"yyyy.MM.dd");
+			obj.discount_create_time = util.dateFormatter(obj.discount_create_time,"yyyy.MM.dd");
+		}
 	}
 	return list;
 }

@@ -103,10 +103,8 @@ app.post('/getBonusList',function  (req,res) {
 	/*链接数据库*/
 	sqldb.querydb(querySql.discount_listSql,[result.open_id]).then(function  (data) {
 		var exitResult = data;
-		exitResult = handler.dealBonusList(exitResult);
-		var sqlLeft = util.appendID(exitResult);
-		console.log(sqlLeft+"查询的ID");
-		
+		exitResult = handler.dealBonusList(exitResult,result.type);
+		var sqlLeft = util.appendID(exitResult);		
 		if(result.type =='is_get'){ 
 			//属于领取的红包列表
 			res.send({"code":"200","message":"获取成功","data":exitResult});
