@@ -103,6 +103,7 @@ app.post('/getBonusList',function  (req,res) {
 	/*链接数据库*/
 	sqldb.querydb(querySql.discount_listSql,[result.open_id]).then(function  (data) {
 		var exitResult = data;
+		exitResult = handler.dealBonusList(exitResult);
 		var sqlLeft = util.appendID(exitResult);
 		console.log(sqlLeft+"查询的ID");
 		
@@ -116,7 +117,6 @@ app.post('/getBonusList',function  (req,res) {
 			unHaveSql = "SELECT dis.id AS discount_id ,dis.discount_amount ,dis.discount_title,dis.discount_reduce_amount,dis.discount_outtime from sup_discount_coupon dis ORDER BY discount_outtime DESC";
 		}
 		sqldb.querydb(unHaveSql).then(function (data) {
-			exitResult = handler.dealBonusList(exitResult);
 			data = handler.dealUnHaveBonusList(data,result.open_id);
 			exitResult =exitResult.concat(data);
 			res.send({"code":"200","message":"获取成功","data":exitResult});

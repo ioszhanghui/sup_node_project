@@ -64,11 +64,32 @@ function supCode(){
 	}
 	return str;
 }
+
+/*处理领取的码*/
+function spaceCode (str) {
+	if (!isNullString(str)) {
+		return "";
+	}
+	return  str.substr(0,4)+" "+str.substr(4,4)+" "+str.substr(8,4);
+}
+/*转化日期格式*/
+function  dateFormatter(date,formatter) {
+	if (!isNullString(date)||!isNullString(formatter)) {
+		return "";
+	}
+	var olddate = new Date(date);
+	var time = olddate.getFullYear() + "." + (olddate.getMonth() < 10 ? '0' + (olddate.getMonth()+1) : (olddate.getMonth()+1)) + "." + (olddate.getDate() < 10 ? '0' + olddate.getDate() : olddate.getDate()) ;
+
+	return time;
+}
+
 module.exports = {
 	checkIsJson:checkIsJson,
 	isNullString:isNullString,
 	appendID:appendID,
 	isTimeOut:isTimeOut,
 	supCode:supCode,
-	checkNumberValidate:checkNumberValidate
+	checkNumberValidate:checkNumberValidate,
+	spaceCode:spaceCode,
+	dateFormatter:dateFormatter
 }
