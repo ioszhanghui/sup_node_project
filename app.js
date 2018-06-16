@@ -95,6 +95,10 @@ app.post('/getBonusList',function  (req,res) {
 		res.send({"code":"300","message":"参数异常 open_id"});
 		return;
 	}
+	if(!util.isNullString(result.type)){
+		res.send({"code":"300","message":"参数异常 type"});
+		return;
+	}
 	
 	/*链接数据库*/
 	sqldb.querydb(querySql.discount_listSql,[result.open_id]).then(function  (data) {
@@ -102,6 +106,11 @@ app.post('/getBonusList',function  (req,res) {
 		var sqlLeft = util.appendID(exitResult);
 		console.log(sqlLeft+"查询的ID");
 		
+		if(result.type =='is_get'){ 
+			//属于领取的红包列表
+			res.send({"code":"200","message":"获取成功","data":exitResult});
+		}else{
+			//属于 红包列表
 		var unHaveSql = "SELECT DISTINCT dis.discount_amount,dis.discount_title,dis.discount_reduce_amount,dis.discount_outtime,dis.id AS discount_id FROM user_info_table u ,user_discount_relation rel,sup_discount_coupon dis WHERE dis.id NOT in ("+sqlLeft+")";
 		if(exitResult.length==0){
 			unHaveSql = "SELECT dis.id AS discount_id ,dis.discount_amount ,dis.discount_title,dis.discount_reduce_amount,dis.discount_outtime from sup_discount_coupon dis ORDER BY discount_outtime DESC";
@@ -116,7 +125,7 @@ app.post('/getBonusList',function  (req,res) {
 			res.send({"code":"300","message":"查询失败"});
 			logger.error("接口"+req.url+"参数"+JSON.stringify(req.body)+error.stack);
 		})
-		
+		}	
 	}).catch(function  (error) {
 			/*失败的回调*/
 		res.send({"code":"300","message":"查询失败"});
