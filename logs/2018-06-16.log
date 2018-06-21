@@ -12,3 +12,150 @@
 [2018-06-16 10:27:24.814] [INFO] log_date - Sat, 16 Jun 2018 02:27:24 GMTPOST /getBonusList
 [2018-06-16 10:27:35.826] [INFO] log_date - Sat, 16 Jun 2018 02:27:35 GMTPOST /getBonusList
 [2018-06-16 10:29:12.396] [INFO] log_date - Sat, 16 Jun 2018 02:29:12 GMTPOST /getBonusList
+[2018-06-16 11:00:11.348] [INFO] log_date - Error: listen EADDRINUSE :::8081
+    at Object.exports._errnoException (util.js:873:11)
+    at exports._exceptionWithHostPort (util.js:896:20)
+    at Server._listen2 (net.js:1250:14)
+    at listen (net.js:1286:10)
+    at Server.listen (net.js:1382:5)
+    at EventEmitter.listen (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/app.js:187:5)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+[2018-06-16 11:00:32.472] [INFO] log_date - Sat, 16 Jun 2018 03:00:32 GMTPOST /getBonusList
+[2018-06-16 11:00:32.473] [ERROR] log_date - 接口/getBonusList参数{"open_id":"1","type":"is_get"}Error: ER_BAD_FIELD_ERROR: Unknown column 'sup_discount_coupon.discount_code' in 'field list'
+    at Query.Sequence._packetToError (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:153:18)
+    at Socket.Readable.push (_stream_readable.js:111:10)
+    --------------------
+    at Protocol._enqueue (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/querySql/db.js:16:16
+    at Handshake.onConnect (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+[2018-06-16 11:01:07.337] [INFO] log_date - Sat, 16 Jun 2018 03:01:07 GMTPOST /getBonusList
+[2018-06-16 11:01:07.337] [ERROR] log_date - 接口/getBonusList参数{"open_id":"1","type":"is_get"}Error: ER_BAD_FIELD_ERROR: Unknown column 'sup_discount_coupon.discount_code' in 'field list'
+    at Query.Sequence._packetToError (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:153:18)
+    at Socket.Readable.push (_stream_readable.js:111:10)
+    --------------------
+    at Protocol._enqueue (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/querySql/db.js:16:16
+    at Ping.onOperationComplete [as _callback] (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.Sequence.end (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Ping.Sequence.OkPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+[2018-06-16 11:01:32.850] [INFO] log_date - Error: listen EADDRINUSE :::8081
+    at Object.exports._errnoException (util.js:873:11)
+    at exports._exceptionWithHostPort (util.js:896:20)
+    at Server._listen2 (net.js:1250:14)
+    at listen (net.js:1286:10)
+    at Server.listen (net.js:1382:5)
+    at EventEmitter.listen (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/app.js:187:5)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+[2018-06-16 11:01:41.826] [INFO] log_date - Error: listen EADDRINUSE :::8081
+    at Object.exports._errnoException (util.js:873:11)
+    at exports._exceptionWithHostPort (util.js:896:20)
+    at Server._listen2 (net.js:1250:14)
+    at listen (net.js:1286:10)
+    at Server.listen (net.js:1382:5)
+    at EventEmitter.listen (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/app.js:187:5)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+[2018-06-16 11:02:08.291] [INFO] log_date - Sat, 16 Jun 2018 03:02:08 GMTPOST /getBonusList
+[2018-06-16 11:08:53.048] [INFO] log_date - Sat, 16 Jun 2018 03:08:53 GMTPOST /getBonusList
+[2018-06-16 11:09:30.870] [INFO] log_date - Sat, 16 Jun 2018 03:09:30 GMTPOST /getBonusList
+[2018-06-16 11:10:20.584] [INFO] log_date - Sat, 16 Jun 2018 03:10:20 GMTPOST /getBonusList
+[2018-06-16 11:10:59.594] [INFO] log_date - Sat, 16 Jun 2018 03:10:59 GMTPOST /getBonusList
+[2018-06-16 11:11:42.981] [INFO] log_date - Sat, 16 Jun 2018 03:11:42 GMTPOST /getBonusList
+[2018-06-16 11:12:06.608] [INFO] log_date - Sat, 16 Jun 2018 03:12:06 GMTPOST /getBonusList
+[2018-06-16 11:12:49.622] [INFO] log_date - Sat, 16 Jun 2018 03:12:49 GMTPOST /getBonusList
+[2018-06-16 11:13:18.681] [INFO] log_date - Sat, 16 Jun 2018 03:13:18 GMTPOST /getBonusList
+[2018-06-16 11:26:49.538] [INFO] log_date - Sat, 16 Jun 2018 03:26:49 GMTPOST /getBonusList
+[2018-06-16 11:26:49.539] [ERROR] log_date - 接口/getBonusList参数{"open_id":"1","type":"is_get"}TypeError: (intermediate value).format is not a function
+    at Object.dateFormatter (/Users/xiaofeiniao/Desktop/sup_node_project/util/util.js:81:34)
+    at Object.dealBonusList (/Users/xiaofeiniao/Desktop/sup_node_project/handler/handler.js:9:30)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/app.js:106:24
+    at process._tickCallback (node.js:369:9)
+[2018-06-16 11:28:10.617] [INFO] log_date - Sat, 16 Jun 2018 03:28:10 GMTPOST /getBonusList
+[2018-06-16 11:28:10.617] [ERROR] log_date - 接口/getBonusList参数{"open_id":"1","type":"is_get"}TypeError: (intermediate value).format is not a function
+    at Object.dateFormatter (/Users/xiaofeiniao/Desktop/sup_node_project/util/util.js:81:34)
+    at Object.dealBonusList (/Users/xiaofeiniao/Desktop/sup_node_project/handler/handler.js:9:30)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/app.js:106:24
+    at process._tickCallback (node.js:369:9)
+[2018-06-16 11:28:39.712] [INFO] log_date - Sat, 16 Jun 2018 03:28:39 GMTPOST /getBonusList
+[2018-06-16 11:28:39.715] [ERROR] log_date - 接口/getBonusList参数{"open_id":"1","type":"is_get"}TypeError: (intermediate value).format is not a function
+    at Object.dateFormatter (/Users/xiaofeiniao/Desktop/sup_node_project/util/util.js:81:34)
+    at Object.dealBonusList (/Users/xiaofeiniao/Desktop/sup_node_project/handler/handler.js:9:31)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/app.js:106:24
+    at process._tickCallback (node.js:369:9)
+[2018-06-16 11:30:25.570] [INFO] log_date - Sat, 16 Jun 2018 03:30:25 GMTPOST /getBonusList
+[2018-06-16 11:30:25.572] [ERROR] log_date - 接口/getBonusList参数{"open_id":"1","type":"is_get"}TypeError: (intermediate value).format is not a function
+    at Object.dateFormatter (/Users/xiaofeiniao/Desktop/sup_node_project/util/util.js:81:34)
+    at Object.dealBonusList (/Users/xiaofeiniao/Desktop/sup_node_project/handler/handler.js:9:31)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/app.js:106:24
+    at process._tickCallback (node.js:369:9)
+[2018-06-16 11:31:43.312] [INFO] log_date - Sat, 16 Jun 2018 03:31:43 GMTPOST /getBonusList
+[2018-06-16 11:31:43.315] [ERROR] log_date - 接口/getBonusList参数{"open_id":"1","type":"is_get"}TypeError: (intermediate value).format is not a function
+    at Object.dateFormatter (/Users/xiaofeiniao/Desktop/sup_node_project/util/util.js:81:34)
+    at Object.dealBonusList (/Users/xiaofeiniao/Desktop/sup_node_project/handler/handler.js:9:31)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/app.js:106:24
+    at process._tickCallback (node.js:369:9)
+[2018-06-16 11:39:04.577] [INFO] log_date - Sat, 16 Jun 2018 03:39:04 GMTPOST /getBonusList
+[2018-06-16 11:39:40.771] [INFO] log_date - Sat, 16 Jun 2018 03:39:40 GMTPOST /getBonusList
+[2018-06-16 11:52:52.550] [INFO] log_date - Error: listen EADDRINUSE :::8081
+    at Object.exports._errnoException (util.js:873:11)
+    at exports._exceptionWithHostPort (util.js:896:20)
+    at Server._listen2 (net.js:1250:14)
+    at listen (net.js:1286:10)
+    at Server.listen (net.js:1382:5)
+    at EventEmitter.listen (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/app.js:187:5)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+[2018-06-16 11:53:12.835] [INFO] log_date - Sat, 16 Jun 2018 03:53:12 GMTPOST /getBonusList
+[2018-06-16 11:53:22.799] [INFO] log_date - Sat, 16 Jun 2018 03:53:22 GMTPOST /getBonusList
+[2018-06-16 11:53:28.400] [INFO] log_date - Sat, 16 Jun 2018 03:53:28 GMTPOST /getBonusList
+[2018-06-16 11:54:30.453] [INFO] log_date - Sat, 16 Jun 2018 03:54:30 GMTPOST /getBonusList
+[2018-06-16 11:56:01.012] [INFO] log_date - Error: listen EADDRINUSE :::8081
+    at Object.exports._errnoException (util.js:873:11)
+    at exports._exceptionWithHostPort (util.js:896:20)
+    at Server._listen2 (net.js:1250:14)
+    at listen (net.js:1286:10)
+    at Server.listen (net.js:1382:5)
+    at EventEmitter.listen (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/app.js:185:5)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+[2018-06-16 11:56:24.518] [INFO] log_date - Sat, 16 Jun 2018 03:56:24 GMTPOST /getBonusList

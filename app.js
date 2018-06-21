@@ -182,7 +182,7 @@ app.post('/supDetail',function  (req,res) {
 		logger.error("接口"+req.url+"参数"+JSON.stringify(req.body)+error.stack);
 	})
 });
-app.listen(8081,function () {
+app.listen(80,function () {
 console.log("服务器启动成功");	
 })
 
