@@ -9,6 +9,13 @@ var multer = require('multer');
  var querySql = require('./querySql/querySql');
  var sqldb = require('./querySql/db.js');
  var log4js = require('log4js');
+ var https = require('https');
+ var fs =require('fs');
+ var privatekey = fs.readFileSync('./certificate/server.key','utf8');
+ var crtkey = fs.readFileSync('./certificate/server.crt','utf8');
+ var credentials = {key: privatekey, cert: crtkey};
+ var httpsServer = https.createServer(credentials, app);
+ 
  log4js.configure({
  	levels:{
  		'log_date' : 'INFO'
@@ -182,7 +189,7 @@ app.post('/supDetail',function  (req,res) {
 		logger.error("接口"+req.url+"参数"+JSON.stringify(req.body)+error.stack);
 	})
 });
-app.listen(8081,function () {
+httpsServer.listen(8081,function () {
 console.log("服务器启动成功");	
 })
 
