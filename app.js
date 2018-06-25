@@ -11,8 +11,8 @@ var multer = require('multer');
  var log4js = require('log4js');
  var https = require('https');
  var fs =require('fs');
- var privatekey = fs.readFileSync('./certificate/server.key','utf8');
- var crtkey = fs.readFileSync('./certificate/server.crt','utf8');
+ var privatekey = fs.readFileSync('./certificate/1530513537216.key','utf8');
+ var crtkey = fs.readFileSync('./certificate/1530513537216.pem','utf8');
  var credentials = {key: privatekey, cert: crtkey};
  var httpsServer = https.createServer(credentials, app);
  
