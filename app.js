@@ -120,7 +120,12 @@ app.post('/getBonusList',function  (req,res) {
 		return;
 	}
 	if(!util.isNullString(result.open_id)||!util.checkNumberValidate(result.open_id)){
-		res.send({"code":"300","message":"参数异常 open_id"});
+		sqldb.querydb("select * from sup_discount_coupon").then(function (data) {
+			res.send({"code":"200","message":"获取成功","data":data});
+		}).catch(function  (error) {
+			res.send({"code":"300","message":"查询失败"});
+			logger.error("接口"+req.url+"参数"+JSON.stringify(req.body)+error.stack);
+		})
 		return;
 	}
 	if(!util.isNullString(result.type)){
@@ -131,6 +136,7 @@ app.post('/getBonusList',function  (req,res) {
 	/*链接数据库*/
 	sqldb.querydb(querySql.discount_listSql,[result.open_id]).then(function  (data) {
 		var exitResult = data;
+		console.error(JSON.stringify(exitResult));
 		exitResult = handler.dealBonusList(exitResult,result.type);
 		var sqlLeft = util.appendID(exitResult);		
 		if(result.type =='is_get'){ 

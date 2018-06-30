@@ -91,3 +91,63 @@
 [2018-06-30 14:36:11.699] [INFO] log_date - Sat, 30 Jun 2018 06:36:11 GMTPOST /wx/login
 [2018-06-30 14:43:47.297] [INFO] log_date - Sat, 30 Jun 2018 06:43:47 GMTPOST /wx/login
 [2018-06-30 15:00:16.060] [INFO] log_date - Sat, 30 Jun 2018 07:00:16 GMTPOST /wx/login
+[2018-06-30 15:51:26.150] [INFO] log_date - Error: listen EADDRINUSE :::8081
+    at Object.exports._errnoException (util.js:873:11)
+    at exports._exceptionWithHostPort (util.js:896:20)
+    at Server._listen2 (net.js:1250:14)
+    at listen (net.js:1286:10)
+    at Server.listen (net.js:1382:5)
+    at Object.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/app.js:213:13)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+    at Function.Module._load (module.js:300:12)
+[2018-06-30 15:52:35.812] [INFO] log_date - Sat, 30 Jun 2018 07:52:35 GMTPOST /getBonusList
+[2018-06-30 15:53:26.582] [INFO] log_date - Sat, 30 Jun 2018 07:53:26 GMTPOST /getBonusList
+[2018-06-30 15:53:26.583] [ERROR] log_date - 接口/getBonusList参数{"type":"all"}Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY sup_discount_coupon.discount_create_time DESC' at line 1
+    at Query.Sequence._packetToError (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:153:18)
+    at Socket.Readable.push (_stream_readable.js:111:10)
+    --------------------
+    at Protocol._enqueue (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/querySql/db.js:16:16
+    at Handshake.onConnect (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+[2018-06-30 15:58:00.565] [INFO] log_date - Sat, 30 Jun 2018 07:58:00 GMTPOST /getBonusList
+[2018-06-30 15:59:18.065] [INFO] log_date - Sat, 30 Jun 2018 07:59:18 GMTPOST /getBonusList
+[2018-06-30 15:59:18.066] [ERROR] log_date - 接口/getBonusList参数{"type":"all"}Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY sup_discount_coupon.discount_create_time DESC' at line 1
+    at Query.Sequence._packetToError (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:153:18)
+    at Socket.Readable.push (_stream_readable.js:111:10)
+    --------------------
+    at Protocol._enqueue (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/querySql/db.js:16:16
+    at Handshake.onConnect (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+[2018-06-30 16:12:35.907] [INFO] log_date - Sat, 30 Jun 2018 08:12:35 GMTPOST /getBonusList
