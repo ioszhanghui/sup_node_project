@@ -15,6 +15,7 @@ var multer = require('multer');
  var crtkey = fs.readFileSync('./certificate/1530513537216.pem','utf8');
  var credentials = {key: privatekey, cert: crtkey};
  var httpsServer = https.createServer(credentials, app);
+ var httpRequest =require("./util/httpRequest.js");
  
  log4js.configure({
  	levels:{
@@ -54,40 +55,52 @@ app.all('*', function(req, res, next) {
 });
 
 /*用户登录*/
-app.post('/login',function(req,res){
-
+app.post('/wx/login',function(req,res){
 	var result = req.body;
 	if(!util.checkIsJson(result)){
 				//没有接收到参数
 		res.send({"code":"300","message":"参数异常"});
 		return;
 	}
-	if(!util.isNullString(result.open_id)||!util.checkNumberValidate(result.open_id)){
-		res.send({"code":"300","message":"参数异常 open_id"});
+	if(!util.isNullString(result.code)){
+		res.send({"code":"300","message":"参数异常 code"});
 		return;
 	}
-	/*链接数据库*/
-
-	sqldb.querydb(querySql.loginSql,[result.open_id]).then(function (data) {
-		/*成功的回调*/
-		if(data[0].amount==0){
-				sqldb.querydb(querySql.loginSaveSql,[result.open_id]).then(function (data) {
-		
-					res.send({"code":"200","message":"登录成功"});
+	
+	var requestUrl =   defaults.wxConfig.wx_url+"appid="+ defaults.wxConfig.appid+"&secret="+defaults.wxConfig.secret+"&grant_type=authorization_code"+"&js_code="+result.code;
+	httpRequest.getHttpUtil({
+		url:requestUrl,
+		success:function (wx_res) {
+				/*链接数据库*/
+				var wx_result =JSON.parse(wx_res);
+				console.log(wx_result.openid+"响应结果");
+				if (!util.isNullString(wx_result.openid)) {
+					res.send({"code":"300","message":"登录失败!"});
+					return;
+				}
+				sqldb.querydb(querySql.loginSql,[wx_result.openid]).then(function (data) {
+					/*成功的回调*/
+					if(data[0].amount==0){
+							sqldb.querydb(querySql.loginSaveSql,[wx_result.openid,wx_result.session_key,result.nickName,result.gender,result.avatarUrl]).then(function (data) {
+								res.send({"code":"200","message":"登录成功",data:wx_result.openid});
+							}).catch(function  (error) {
+								/*失败的回调*/
+								res.send({"code":"500","message":"服务器异常"});
+							})
+							return;
+					}
+					res.send({"code":"200","message":"登录成功",data:wx_result.openid});
 					
-				}).catch(function  (error) {
+				}).catch(function(error){
 					/*失败的回调*/
 					res.send({"code":"500","message":"服务器异常"});
+					logger.error("接口"+req.url+"参数"+JSON.stringify(req.body)+error.stack);
 				})
-				return;
+		},
+		fail:function (error) {
+			console.error(error+"接收的错误");
 		}
-		res.send({"code":"200","message":"登录成功"});
-		
-	}).catch(function(error){
-		/*失败的回调*/
-		res.send({"code":"500","message":"服务器异常"});
-		logger.error("接口"+req.url+"参数"+JSON.stringify(req.body)+error.stack);
-	})
+	});
 })
 /*获取优惠券列表*/
 app.post('/getBonusList',function  (req,res) {

@@ -1,0 +1,70 @@
+[2018-06-29 22:41:48.897] [INFO] log_date - Fri, 29 Jun 2018 14:41:48 GMTPOST /getBonusList
+[2018-06-29 22:41:48.898] [ERROR] log_date - 接口/getBonusList参数{"open_id":"1","type":"all"}Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'wapp_xhb100_com'@'115.33.196.245' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Handshake.ErrorPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Handshake.js:130:18)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:153:18)
+    at Socket.Readable.push (_stream_readable.js:111:10)
+    --------------------
+    at Protocol._enqueue (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at PoolConnection.connect (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:130:18)
+    at Pool.getConnection (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/querySql/db.js:11:9
+    at Object.querydb (/Users/xiaofeiniao/Desktop/sup_node_project/querySql/db.js:9:9)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/app.js:127:8
+    at Layer.handle [as handle_request] (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/router/route.js:112:3)
+[2018-06-29 22:44:16.193] [INFO] log_date - Fri, 29 Jun 2018 14:44:16 GMTPOST /getBonusList
+[2018-06-29 22:44:16.194] [ERROR] log_date - 接口/getBonusList参数{"open_id":"1","type":"all"}Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'wapp_xhb100_com'@'115.33.198.149' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Handshake.ErrorPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Handshake.js:130:18)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:153:18)
+    at Socket.Readable.push (_stream_readable.js:111:10)
+    --------------------
+    at Protocol._enqueue (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at PoolConnection.connect (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:130:18)
+    at Pool.getConnection (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/querySql/db.js:11:9
+    at Object.querydb (/Users/xiaofeiniao/Desktop/sup_node_project/querySql/db.js:9:9)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/app.js:127:8
+    at Layer.handle [as handle_request] (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/router/route.js:112:3)
+[2018-06-29 22:46:00.030] [INFO] log_date - Fri, 29 Jun 2018 14:46:00 GMTPOST /getBonusList
+[2018-06-29 22:46:00.031] [ERROR] log_date - 接口/getBonusList参数{"open_id":"1","type":"all"}Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'wapp_xhb100_com'@'115.33.217.208' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Handshake.ErrorPacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/sequences/Handshake.js:130:18)
+    at Protocol._parsePacket (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:153:18)
+    at Socket.Readable.push (_stream_readable.js:111:10)
+    --------------------
+    at Protocol._enqueue (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at PoolConnection.connect (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Connection.js:130:18)
+    at Pool.getConnection (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/querySql/db.js:11:9
+    at Object.querydb (/Users/xiaofeiniao/Desktop/sup_node_project/querySql/db.js:9:9)
+    at /Users/xiaofeiniao/Desktop/sup_node_project/app.js:127:8
+    at Layer.handle [as handle_request] (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/express/lib/router/route.js:112:3)
+[2018-06-29 23:41:47.162] [INFO] log_date - Fri, 29 Jun 2018 15:41:47 GMTPOST /wx/login

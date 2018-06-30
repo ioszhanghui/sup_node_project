@@ -1,0 +1,93 @@
+[2018-06-30 00:11:21.912] [INFO] log_date - TypeError: data.fail is not a function
+    at Request._callback (/Users/xiaofeiniao/Desktop/sup_node_project/util/httpRequest.js:29:9)
+    at Request.self.callback (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:185:22)
+    at emitTwo (events.js:87:13)
+    at Request.emit (events.js:172:7)
+    at Request.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:1157:10)
+    at emitOne (events.js:77:13)
+    at Request.emit (events.js:169:7)
+    at IncomingMessage.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:1079:12)
+    at IncomingMessage.g (events.js:260:16)
+    at emitNone (events.js:72:20)
+[2018-06-30 00:14:39.595] [INFO] log_date - TypeError: data.success is not a function
+    at Request._callback (/Users/xiaofeiniao/Desktop/sup_node_project/util/httpRequest.js:27:9)
+    at Request.self.callback (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:185:22)
+    at emitTwo (events.js:87:13)
+    at Request.emit (events.js:172:7)
+    at Request.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:1157:10)
+    at emitOne (events.js:77:13)
+    at Request.emit (events.js:169:7)
+    at IncomingMessage.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:1079:12)
+    at IncomingMessage.g (events.js:260:16)
+    at emitNone (events.js:72:20)
+[2018-06-30 00:16:08.448] [INFO] log_date - ReferenceError: body is not defined
+    at Request._callback (/Users/xiaofeiniao/Desktop/sup_node_project/util/httpRequest.js:26:31)
+    at Request.self.callback (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:185:22)
+    at emitTwo (events.js:87:13)
+    at Request.emit (events.js:172:7)
+    at Request.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:1157:10)
+    at emitOne (events.js:77:13)
+    at Request.emit (events.js:169:7)
+    at IncomingMessage.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:1079:12)
+    at IncomingMessage.g (events.js:260:16)
+    at emitNone (events.js:72:20)
+[2018-06-30 00:17:14.171] [INFO] log_date - ReferenceError: body is not defined
+    at Request._callback (/Users/xiaofeiniao/Desktop/sup_node_project/util/httpRequest.js:26:27)
+    at Request.self.callback (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:185:22)
+    at emitTwo (events.js:87:13)
+    at Request.emit (events.js:172:7)
+    at Request.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:1157:10)
+    at emitOne (events.js:77:13)
+    at Request.emit (events.js:169:7)
+    at IncomingMessage.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:1079:12)
+    at IncomingMessage.g (events.js:260:16)
+    at emitNone (events.js:72:20)
+[2018-06-30 00:18:24.421] [INFO] log_date - TypeError: data.success is not a function
+    at Request._callback (/Users/xiaofeiniao/Desktop/sup_node_project/util/httpRequest.js:27:9)
+    at Request.self.callback (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:185:22)
+    at emitTwo (events.js:87:13)
+    at Request.emit (events.js:172:7)
+    at Request.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:1157:10)
+    at emitOne (events.js:77:13)
+    at Request.emit (events.js:169:7)
+    at IncomingMessage.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:1079:12)
+    at IncomingMessage.g (events.js:260:16)
+    at emitNone (events.js:72:20)
+[2018-06-30 00:20:44.343] [INFO] log_date - Fri, 29 Jun 2018 16:20:44 GMTPOST /wx/login
+[2018-06-30 00:43:43.589] [INFO] log_date - Fri, 29 Jun 2018 16:43:43 GMTPOST /wx/login
+[2018-06-30 00:48:24.327] [INFO] log_date - ReferenceError: utils is not defined
+    at Object.httpRequest.getHttpUtil.success (/Users/xiaofeiniao/Desktop/sup_node_project/app.js:79:10)
+    at Request._callback (/Users/xiaofeiniao/Desktop/sup_node_project/util/httpRequest.js:27:15)
+    at Request.self.callback (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:185:22)
+    at emitTwo (events.js:87:13)
+    at Request.emit (events.js:172:7)
+    at Request.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:1157:10)
+    at emitOne (events.js:77:13)
+    at Request.emit (events.js:169:7)
+    at IncomingMessage.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/node_modules/request/request.js:1079:12)
+    at IncomingMessage.g (events.js:260:16)
+[2018-06-30 00:49:24.354] [INFO] log_date - Fri, 29 Jun 2018 16:49:24 GMTPOST /wx/login
+[2018-06-30 00:50:56.656] [INFO] log_date - Fri, 29 Jun 2018 16:50:56 GMTPOST /wx/login
+[2018-06-30 00:55:01.485] [INFO] log_date - Fri, 29 Jun 2018 16:55:01 GMTPOST /wx/login
+[2018-06-30 00:55:03.765] [INFO] log_date - Fri, 29 Jun 2018 16:55:03 GMTPOST /wx/login
+[2018-06-30 00:59:02.018] [INFO] log_date - Fri, 29 Jun 2018 16:59:02 GMTPOST /wx/login
+[2018-06-30 10:44:15.933] [INFO] log_date - Sat, 30 Jun 2018 02:44:15 GMTPOST /wx/login
+[2018-06-30 10:53:17.431] [INFO] log_date - Error: listen EADDRINUSE :::8081
+    at Object.exports._errnoException (util.js:873:11)
+    at exports._exceptionWithHostPort (util.js:896:20)
+    at Server._listen2 (net.js:1250:14)
+    at listen (net.js:1286:10)
+    at Server.listen (net.js:1382:5)
+    at Object.<anonymous> (/Users/xiaofeiniao/Desktop/sup_node_project/app.js:205:13)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+    at Function.Module._load (module.js:300:12)
+[2018-06-30 10:53:50.844] [INFO] log_date - Sat, 30 Jun 2018 02:53:50 GMTPOST /wx/login
+[2018-06-30 10:59:16.672] [INFO] log_date - Sat, 30 Jun 2018 02:59:16 GMTPOST /wx/login
+[2018-06-30 14:26:43.212] [INFO] log_date - Sat, 30 Jun 2018 06:26:43 GMTPOST /wx/login
+[2018-06-30 14:28:51.796] [INFO] log_date - Sat, 30 Jun 2018 06:28:51 GMTPOST /wx/login
+[2018-06-30 14:35:25.867] [INFO] log_date - Sat, 30 Jun 2018 06:35:25 GMTPOST /wx/login
+[2018-06-30 14:36:11.699] [INFO] log_date - Sat, 30 Jun 2018 06:36:11 GMTPOST /wx/login
+[2018-06-30 14:43:47.297] [INFO] log_date - Sat, 30 Jun 2018 06:43:47 GMTPOST /wx/login
+[2018-06-30 15:00:16.060] [INFO] log_date - Sat, 30 Jun 2018 07:00:16 GMTPOST /wx/login

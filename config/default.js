@@ -11,6 +11,15 @@ var mysqlConfig ={
 	"queueLimit":"0"//最大连接请求队列限制，设置为0表示不限制，默认：0
 }
 
+/*微信获取open_id*/
+var wxConfig ={
+	appid:"wx2b1233d99e063697",
+	secret:"abe0ae079c05c808a858ec9f621dc27a",
+	grant_type:"authorization_code",
+	wx_url:"https://api.weixin.qq.com/sns/jscode2session?"
+}
+
 module.exports={
-	mysqlConfig:mysqlConfig
+	mysqlConfig:mysqlConfig,
+	wxConfig:wxConfig
 }
