@@ -73,7 +73,6 @@ app.post('/wx/login',function(req,res){
 		success:function (wx_res) {
 				/*链接数据库*/
 				var wx_result =JSON.parse(wx_res);
-				console.log(wx_result.openid+"响应结果");
 				if (!util.isNullString(wx_result.openid)) {
 					res.send({"code":"300","message":"登录失败!"});
 					return;
@@ -82,15 +81,24 @@ app.post('/wx/login',function(req,res){
 					/*成功的回调*/
 					if(data[0].amount==0){
 							sqldb.querydb(querySql.loginSaveSql,[wx_result.openid,wx_result.session_key,result.nickName,result.gender,result.avatarUrl]).then(function (data) {
-								res.send({"code":"200","message":"登录成功",data:wx_result.openid});
+										sqldb.querydb(querySql.queryID,[wx_result.openid]).then(function (data) {
+											res.send({"code":"200","message":"登录成功",data:data});
+										}).catch(function  (error) {
+											res.send({"code":"300","message":"登录失败"});
+										})								
 							}).catch(function  (error) {
 								/*失败的回调*/
 								res.send({"code":"500","message":"服务器异常"});
 							})
 							return;
 					}
-					res.send({"code":"200","message":"登录成功",data:wx_result.openid});
 					
+					sqldb.querydb(querySql.queryID,[wx_result.openid]).then(function (data) {
+							res.send({"code":"200","message":"登录成功",data:data});
+						}).catch(function  (error) {
+							res.send({"code":"300","message":"登录失败"});
+							logger.error("接口"+req.url+"参数"+JSON.stringify(req.body)+error.stack);
+						})						
 				}).catch(function(error){
 					/*失败的回调*/
 					res.send({"code":"500","message":"服务器异常"});
