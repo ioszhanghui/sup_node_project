@@ -121,6 +121,7 @@ app.post('/getBonusList',function  (req,res) {
 	}
 	if(!util.isNullString(result.open_id)||!util.checkNumberValidate(result.open_id)){
 		sqldb.querydb("select * from sup_discount_coupon").then(function (data) {
+			data = handler.dealUnHaveBonusList(data,result.open_id);
 			res.send({"code":"200","message":"获取成功","data":data});
 		}).catch(function  (error) {
 			res.send({"code":"300","message":"查询失败"});
